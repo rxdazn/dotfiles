@@ -19,7 +19,6 @@ compinit
 export EDITOR=vim
 
 # prompt
-#export PS1="%n@%{$fg[red]%}%B%m%b%{$reset_color%}:%~$"
 export PS1="%n@%B%m%b%:%~$"
 
 alias ls='ls --color=auto -F'

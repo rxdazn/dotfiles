@@ -1,0 +1,35 @@
+
+URxvt*termName: rxvt-unicode
+URxvt.scrollstyle: plain
+
+URxvt.urlLauncher:/usr/bin/chromium
+URxvt.matcher.button: 1
+
+URxvt.font: xft: DejaVu Sans Mono:pixelsize=12:antialias=true:hinting=true
+!colors
+URxvt.foreground:     #DDDDDD
+URxvt.background:     #121212
+!black
+*color0:    #555555
+*color8:    #888888
+!red
+*color1:    #CC5555
+*color9:    #FF8888
+!green
+*color2:    #66BB88
+*color10:   #99EEBB
+!yellow
+*color3:    #CC8855
+*color11:   #FFBB88
+!blue
+*color4:    #6688BB
+*color12:   #99BBEE
+!magenta
+*color5:    #CC5588
+*color13:   #FF88BB
+!cyan
+*color6:    #66BBBB
+*color14:   #99EEEE
+!white
+*color7:    #BBBBBB
+*color15:   #EEEEEE

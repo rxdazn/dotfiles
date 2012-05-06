@@ -7,8 +7,8 @@ setopt completealiases
 
 # rxvt
 bindkey "\e[3~" delete-char         # Delete
-bindkey "\e[7~" beginning-of-line   # Home
-bindkey "\e[8~" end-of-line         # End
+bindkey "^[[7~" beginning-of-line   # Home
+bindkey "^[[8~" end-of-line         # End
 
 bindkey -e
 zstyle :compinstall filename '/home/rxdazn/.zshrc'
@@ -18,9 +18,11 @@ compinit
 
 export EDITOR=vim
 
-# prompt
 export PS1="%n@%B%m%b%:%~$"
 
 alias ls='ls --color=auto -F'
 alias la='ls -la'
 alias ll='ls -l'
+alias emacs='emacs -nw'
+alias feh='feh -q'
+alias scrot='scrot -q 100 -d 5 -c'

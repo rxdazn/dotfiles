@@ -1,32 +1,30 @@
-" rxdazn's .vimrc
-
-syntax on
 filetype plugin on
 filetype indent on
-colorscheme distinguished 
+syntax on
 
-set t_Co=256
+colorscheme jellybeans 
+set         t_Co=256
 
 " tabbing
 set autoindent
+set softtabstop=4
 set tabstop=4
 set shiftwidth=4
-set softtabstop=4
 set expandtab
-autocmd FileType make setlocal noexpandtab " Makefile
+set hlsearch
+
+" max text width
+set textwidth=80
 
 " line numbers
 set number
-set nuw=2
 
-" search
-set hlsearch
+execute pathogen#infect()
 
-" pathogen
-call pathogen#infect()
-call pathogen#helptags()
+set nocompatible
+set laststatus=2
+set noshowmode
+set encoding=utf-8
 
-" Powerline
-set nocompatible    " Disable vi-compatibility
-set laststatus=2    " Always show the statusline
-set encoding=utf-8  " Necessary to show Unicode glyphs
+"autocmd FileType html setlocal noexpandtab
+autocmd FileType html,htmldjango,javascript,scss setlocal noexpandtab

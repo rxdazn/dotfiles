@@ -48,3 +48,8 @@ alias feh='feh -q'
 alias scrot='scrot -d 5 -c'
 alias tmux='tmux -2'
 alias ack='ack --pager="less -RXF"'
+alias init-ixc-django='setup_django_site.py'
+
+# fixes sed: RE error: illegal byte sequence on osx
+export LC_CTYPE=C 
+export LANG=C

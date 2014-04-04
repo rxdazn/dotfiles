@@ -18,6 +18,7 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
 source /usr/local/bin/virtualenvwrapper.sh
 export PIP_VIRTUALENV_BASE=$WORKON_HOME # Tell pip to create its virtualenvs in $WORKON_HOME.
 export PIP_RESPECT_VIRTUALENV=true # Tell pip to automatically use the currently active virtualenv.
+export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 
 # - go
 export GOROOT=$HOME/go

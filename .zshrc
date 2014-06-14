@@ -51,6 +51,8 @@ alias tmux='tmux -2'
 alias ack='ack --pager="less -RXF"'
 alias init-ixc-django='setup_django_site.py'
 
+export TERM=screen-256color-bce
+
 # fixes sed: RE error: illegal byte sequence on osx
 export LC_CTYPE=C 
 export LANG=C
@@ -58,3 +60,5 @@ export LANG=C
 # osx clang '-mno-fused-madd' unused argument error fix
 export CFLAGS=-Qunused-arguments
 export CPPFLAGS=-Qunused-arguments
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

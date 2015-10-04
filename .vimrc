@@ -27,13 +27,36 @@ set number
 set cursorcolumn
 set cursorline
 
-execute pathogen#infect()
-
-set nocompatible
 set laststatus=2
+
 set noshowmode
 set encoding=utf-8
 
 "autocmd FileType html setlocal noexpandtab
 "autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd FileType html,htmldjango,scss,javascript setlocal noexpandtab
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'kien/ctrlp.vim'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'airblade/vim-gitgutter'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1

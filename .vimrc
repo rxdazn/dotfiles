@@ -36,6 +36,10 @@ set encoding=utf-8
 "autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd FileType html,htmldjango,scss,javascript setlocal noexpandtab
 
+" highlight trailing spaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -53,6 +57,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'airblade/vim-gitgutter'
+" Less CSS Compiler
+Plugin 'groenewege/vim-less'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -60,3 +66,6 @@ filetype plugin indent on    " required
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
+
+let g:ctrlp_custom_ignore = '\v.DS_Store|.sass-cache|.bundle|.git|.hg|.svn|node_modules|vendor|bower_components$'
+let NERDTreeIgnore = ['\v.DS_Store|.sass-cache|.bundle|.git|.hg|.svn|node_modules|vendor|bower_components$']

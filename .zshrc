@@ -8,6 +8,9 @@ setopt completealiases
 bindkey -e
 autoload -U colors && colors
 
+# git autocompletion
+autoload -Uz compinit && compinit
+
 alias ls='ls -F'
 alias la='ls -la'
 alias ll='ls -l'

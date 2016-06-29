@@ -2,7 +2,7 @@ filetype plugin on
 filetype indent on
 syntax on
 
-colorscheme jellybeans 
+colorscheme jellybeans
 set         t_Co=256
 
 " tabbing
@@ -37,8 +37,10 @@ set encoding=utf-8
 autocmd FileType html,htmldjango,scss,javascript setlocal noexpandtab
 
 " highlight trailing spaces
-highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
+highlight ExtraWhitespace ctermbg=red guibg=red
+" soft 80 chars limit
+let &colorcolumn=join(range(81,999),",")
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -59,7 +61,6 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'airblade/vim-gitgutter'
 " Less CSS Compiler
 Plugin 'groenewege/vim-less'
-Plugin 'fatih/vim-go'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -68,5 +69,12 @@ filetype plugin indent on    " required
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 
-let g:ctrlp_custom_ignore = '\v.DS_Store|.sass-cache|.bundle|.git|.hg|.svn|node_modules|vendor|bower_components$'
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/](\.(git|hg|svn))|(out|bower_components|node_modules|closure-library|third_party)$',
+    \ 'file': '\v\.(exe|so|dll|DS_Store)$',
+    \ }
+let g:syntastic_mode_map = {
+    \ 'mode': 'active',
+    \ 'passive_filetypes': ['html'],
+    \ }
 let NERDTreeIgnore = ['\v.DS_Store|.sass-cache|.bundle|.git|.hg|.svn|node_modules|vendor|bower_components$']

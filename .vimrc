@@ -11,6 +11,7 @@ set softtabstop=4
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set backspace=indent,eol,start
 
 set ignorecase
 set smartcase
@@ -32,18 +33,23 @@ set laststatus=2
 set noshowmode
 set encoding=utf-8
 
+" :vs, :s
+set splitright
+set diffopt+=vertical
+
+" disable insert line wrap
+set formatoptions-=t
+
 "autocmd FileType html setlocal noexpandtab
 "autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd FileType html,htmldjango,scss,javascript setlocal noexpandtab
-
-" highlight trailing spaces
-match ExtraWhitespace /\s\+$/
-highlight ExtraWhitespace ctermbg=red guibg=red
-" soft 80 chars limit
-let &colorcolumn=join(range(81,999),",")
+au BufReadPost *.sls set syntax=yaml
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
+
+set listchars=eol:¬,tab:→→,trail:~,extends:>,precedes:<,space:·
+set list
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim

@@ -1,5 +1,5 @@
 [core]
-	editor = vim
+    editor = vim
     filemode = false
 [user]
     name = rxdazn 
@@ -10,4 +10,4 @@
     tree = log --graph --full-history --all --color --date=short --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m%d"
     graph = log --graph --pretty=format:'%Cred%h%Creset %ad %s %C(yellow)%d%Creset %C(bold blue)(%an)%Creset' --date=short
 [color]
-	ui = true
+    ui = true

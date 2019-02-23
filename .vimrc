@@ -40,9 +40,8 @@ set diffopt+=vertical
 " disable insert line wrap
 set formatoptions-=t
 
-"autocmd FileType html setlocal noexpandtab
-"autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd FileType html,htmldjango,scss,javascript setlocal noexpandtab
+" Salt .sls
 au BufReadPost *.sls set syntax=yaml
 
 set nocompatible              " be iMproved, required
@@ -62,11 +61,15 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
-Plugin 'Lokaltog/vim-powerline'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'airblade/vim-gitgutter'
-" Less CSS Compiler
-Plugin 'groenewege/vim-less'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+let g:airline_powerline_fonts = 1
+let g:airline_theme='deus'
+" Automatically displays all buffers when there's only one tab open.
+let g:airline#extensions#tabline#enabled = 1
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

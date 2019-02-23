@@ -7,7 +7,6 @@
 [alias]
     st = status
     co = checkout
-    tree = log --graph --full-history --all --color --date=short --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m%d"
-    graph = log --graph --pretty=format:'%Cred%h%Creset %ad %s %C(yellow)%d%Creset %C(bold blue)(%an)%Creset' --date=short
+    tree = log --graph --all --abbrev-commit --date=short --pretty='%C(auto)%h%d %C(reset)%s %C(bold blue)(%ce) %C(reset)%C(green)(%cd)'
 [color]
     ui = true

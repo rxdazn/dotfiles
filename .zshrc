@@ -11,17 +11,13 @@ autoload -U colors && colors
 # git autocompletion
 autoload -Uz compinit && compinit
 
-alias ls='ls -F'
+alias ls='ls -FG'
 alias la='ls -la'
 alias ll='ls -l'
 alias tmux='tmux -2'
-alias ack='ack --pager="less -RXF"'
+alias ag='ag --pager="less -RXF"'
 
 export TERM=screen
-
-# fixes sed: RE error: illegal byte sequence on osx
-#export LC_CTYPE=C 
-#export LANG=C
 
 # osx clang '-mno-fused-madd' unused argument error fix
 export CFLAGS=-Qunused-arguments
@@ -57,6 +53,19 @@ RED=$'%{\033[31m%}'
 BLUE=$'%{\033[34m%}'
 PROMPT="${GREEN}[${SGR_RST}%40<...<%~%<<${GREEN}]${SGR_RST}${GREEN}\$${SGR_RST} "
 PPROMPT="${GREEN}[${SGR_RST}%40<...<%~%<<${GREEN}]${SGR_RST}"
-#RPROMPT="${JPROMPT}${PPROMPT}"
 RPROMPT="${JPROMPT}"
 
+export PATH=/usr/local/bin:$PATH
+export PATH=$HOME/Library/Python/3.7/bin:$PATH
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

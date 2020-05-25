@@ -40,7 +40,13 @@ set diffopt+=vertical
 " disable insert line wrap
 set formatoptions-=t
 
-autocmd FileType html,htmldjango,scss,javascript setlocal noexpandtab
+" spelling
+set spelllang=en
+set spellfile=$HOME/.vim/.spell.en.utf-8.add
+
+autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd FileType gitcommit setlocal spell
+
 " Salt .sls
 au BufReadPost *.sls set syntax=yaml
 
@@ -76,6 +82,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tommcdo/vim-exchange'
 Plug 'haya14busa/incsearch.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'chase/vim-ansible-yaml'
+
 " :CocInstall coc-python
 
 call plug#end()
@@ -146,5 +154,8 @@ nmap <script> <silent> <leader>l :call ToggleLocationList()<CR>
 nmap <script> <silent> <leader>q :call ToggleQuickfixList()<CR>
 
 " coc nvim
+if system('uname -s') != "Darwin\n"
+    let g:coc_disable_startup_warning = 1
+endif
 nmap [l <Plug>(coc-diagnostic-prev)
 nmap ]l <Plug>(coc-diagnostic-next)

@@ -81,10 +81,13 @@ Plug 'tpope/vim-unimpaired'
 Plug 'easymotion/vim-easymotion'
 Plug 'tommcdo/vim-exchange'
 Plug 'haya14busa/incsearch.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'chase/vim-ansible-yaml'
 
-" :CocInstall coc-python
+if system('uname -s') == "Darwin\n"
+    " :CocInstall coc-python
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+endif
+
 
 call plug#end()
 
@@ -154,8 +157,8 @@ nmap <script> <silent> <leader>l :call ToggleLocationList()<CR>
 nmap <script> <silent> <leader>q :call ToggleQuickfixList()<CR>
 
 " coc nvim
-if system('uname -s') != "Darwin\n"
+if system('uname -s') == "Darwin\n"
     let g:coc_disable_startup_warning = 1
+    nmap [l <Plug>(coc-diagnostic-prev)
+    nmap ]l <Plug>(coc-diagnostic-next)
 endif
-nmap [l <Plug>(coc-diagnostic-prev)
-nmap ]l <Plug>(coc-diagnostic-next)

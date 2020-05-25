@@ -19,7 +19,7 @@ case "$OSTYPE" in
   ;;
   linux*)
     # GNU ls --G omits group names from -l output which is unwanted
-    alias ls='ls -F'
+    alias ls='ls -F --color'
   ;;
 esac
 alias la='ls -la'
